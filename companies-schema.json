@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "companies"
+  ],
+  "properties": {
+    "companies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "company_id",
+          "website",
+          "location",
+          "job_description",
+          "applicant_status"
+        ],
+        "properties": {
+          "company_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "website": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "job_description": {
+            "type": "string"
+          },
+          "applicant_status": {
+            "type": "string",
+            "enum": [
+              "TODO",
+              "applied",
+              "rejected",
+              "interview",
+              "offer",
+              "accepted",
+              "empty"
+            ]
+          },
+          "resume_version": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
